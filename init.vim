@@ -5,6 +5,9 @@ filetype plugin indent on
 call plug#begin('~/.config/nvim/plugged')
 " Make sure you use single quotes
 
+" fish support for vim
+Plug 'dag/vim-fish'
+
 " Airline is a plugin that makes the status line look fancier.
 " It requires a custom font (with arrows), and is completely optional
 Plug 'vim-airline/vim-airline'
@@ -80,6 +83,10 @@ call plug#end()
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+autocmd FileType fish compiler fish
+autocmd FileType fish setlocal textwidth=79
+autocmd FileType fish setlocal foldmethod=expr
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
