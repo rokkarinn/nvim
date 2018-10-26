@@ -1,3 +1,8 @@
+" Teach vim to fish
+if &shell =~# 'fish$'
+    set shell=sh
+endif
+
 " Minimal Configuration
 set nocompatible
 filetype plugin indent on
