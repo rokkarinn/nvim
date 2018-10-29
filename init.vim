@@ -89,10 +89,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-autocmd FileType fish compiler fish
-autocmd FileType fish setlocal textwidth=79
-autocmd FileType fish setlocal foldmethod=expr
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
