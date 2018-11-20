@@ -82,6 +82,9 @@ Plug 'fisadev/vim-isort'
 Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
 Plug 'juliosueiras/vim-terraform-completion'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+
 call plug#end()
 
 " Syntastic Config
