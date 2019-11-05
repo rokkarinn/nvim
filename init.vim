@@ -1,3 +1,5 @@
+language is_IS
+
 " Teach vim to fish
 if &shell =~# 'fish$'
     set shell=sh
@@ -21,6 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " A more convenient (than default) directory browser for Vim
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " This is a core plugin to support autocompletion for most of the things.
 " This is also the messiest one, as it requires manual (and periodic) 
@@ -175,6 +178,7 @@ colorscheme onedark
 " Ctrl+P opens a fuzzy filesearch window (powered by Fzf)
 nnoremap <C-p> :Files<CR>
 
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Switch to last active tab
 let g:lasttab = 1
