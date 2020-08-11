@@ -13,80 +13,134 @@ call plug#begin('~/.config/nvim/plugged')
 " Make sure you use single quotes
 
 " fish support for vim
-Plug 'dag/vim-fish'
+if !exists('g:vscode')
+	Plug 'dag/vim-fish'
+endif
 
 " Airline is a plugin that makes the status line look fancier.
 " It requires a custom font (with arrows), and is completely optional
-Plug 'vim-airline/vim-airline'
+if !exists('g:vscode')
+	Plug 'vim-airline/vim-airline'
+endif
 
-Plug 'vim-airline/vim-airline-themes'
+if !exists('g:vscode')
+	Plug 'vim-airline/vim-airline-themes'
+endif
 
 " A more convenient (than default) directory browser for Vim
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+if !exists('g:vscode')
+	Plug 'scrooloose/nerdtree'
+endif
+if !exists('g:vscode')
+	Plug 'Xuyuanp/nerdtree-git-plugin'
+endif
 
 " This is a core plugin to support autocompletion for most of the things.
 " This is also the messiest one, as it requires manual (and periodic) 
 " invocation of the build script.
-Plug 'Valloric/YouCompleteMe'
+if !exists('g:vscode')
+	Plug 'Valloric/YouCompleteMe'
+endif
 
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+if !exists('g:vscode')
+	Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+endif
 
 " Autocompletion for Python
-Plug 'davidhalter/jedi-vim'
+if !exists('g:vscode')
+	Plug 'davidhalter/jedi-vim'
+endif
 
 " Highlights new/mofified/deleted lines in the "gutter"
-Plug 'airblade/vim-gitgutter'
+if !exists('g:vscode')
+	Plug 'airblade/vim-gitgutter'
+endif
 
 " Later in the config I'll bind this plugin to "gc"
 " Typing "gc" will comment out a block or line of code in any language
-Plug 'tpope/vim-commentary'
+if !exists('g:vscode')
+	Plug 'tpope/vim-commentary'
+endif
 
 " A Git plugin with a crazy useful command :GitBlame
 " Don't wait, blame someone else!
-Plug 'tpope/vim-fugitive'
+if !exists('g:vscode')
+	Plug 'tpope/vim-fugitive'
+endif
 
 " A collection of colorschemes. Doesn't include my favorite one though.
-Plug 'flazz/vim-colorschemes'
+if !exists('g:vscode')
+	Plug 'flazz/vim-colorschemes'
+endif
 
 " If you prefer Ctrl+h/j/k/l for navigating across vim/tmux splits,
 " this plugin will integrate Vim and Tmux, so that you can seamlessly
 " Jump across the border of a vim/tmux split
-Plug 'christoomey/vim-tmux-navigator'
+if !exists('g:vscode')
+	Plug 'christoomey/vim-tmux-navigator'
+endif
 
 " This is the interesting one: it generates a Tmux config that makes
 " a tmux status line look like a vim airline with an applied theme
-Plug 'edkolev/tmuxline.vim'
+if !exists('g:vscode')
+	Plug 'edkolev/tmuxline.vim'
+endif
 
 " A wrapper around silversearcher-ag
-Plug 'rking/ag.vim'
+if !exists('g:vscode')
+	Plug 'rking/ag.vim'
+endif
 
 " A Vim plugin for all things Go. Supports autocompletion,
 " smart code navigation, linting, and much more
-Plug 'fatih/vim-go'
+if !exists('g:vscode')
+	Plug 'fatih/vim-go'
+endif
 
 " Never got used to this one, but it allows for wrapping a piece of
 " text into "", '', or custom tags
-Plug 'tpope/vim-surround'
+if !exists('g:vscode')
+	Plug 'tpope/vim-surround'
+endif
 
 " Fzf for ffffuzzzy search~
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+if !exists('g:vscode')
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+endif
+if !exists('g:vscode')
+	Plug 'junegunn/fzf.vim'
+endif
 
 " Neomake for asynchronous linting and building
-Plug 'neomake/neomake'
+if !exists('g:vscode')
+	Plug 'neomake/neomake'
+endif
 
 " A beautiful autopep8. Have it bound to "ap"
-Plug 'tell-k/vim-autopep8'
+if !exists('g:vscode')
+	Plug 'tell-k/vim-autopep8'
+endif
 
 " Import sorter for Python
-Plug 'fisadev/vim-isort'
+if !exists('g:vscode')
+	Plug 'fisadev/vim-isort'
+endif
 
-Plug 'hashivim/vim-terraform'
-Plug 'vim-syntastic/syntastic'
-Plug 'juliosueiras/vim-terraform-completion'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'martinda/Jenkinsfile-vim-syntax'
+if !exists('g:vscode')
+	Plug 'hashivim/vim-terraform'
+endif
+if !exists('g:vscode')
+	Plug 'vim-syntastic/syntastic'
+endif
+if !exists('g:vscode')
+	Plug 'juliosueiras/vim-terraform-completion'
+endif
+if !exists('g:vscode')
+	Plug 'editorconfig/editorconfig-vim'
+endif
+if !exists('g:vscode')
+	Plug 'martinda/Jenkinsfile-vim-syntax'
+endif
 
 call plug#end()
 
