@@ -68,9 +68,9 @@ if !exists('g:vscode')
 	Plug 'tpope/vim-fugitive'
 endif
 
-" A collection of colorschemes. Doesn't include my favorite one though.
+" vim-one atom colorscheme plugin
 if !exists('g:vscode')
-	Plug 'flazz/vim-colorschemes'
+    Plug 'https://github.com/rakr/vim-one.git'
 endif
 
 " If you prefer Ctrl+h/j/k/l for navigating across vim/tmux splits,
@@ -141,6 +141,13 @@ endif
 if !exists('g:vscode')
 	Plug 'martinda/Jenkinsfile-vim-syntax'
 endif
+if !exists('g:vscode')
+        Plug 'google/vim-jsonnet'
+endif
+
+if !exists('g:vscode')
+    Plug 'pedrohdz/vim-yaml-folds'
+endif
 
 call plug#end()
 
@@ -186,7 +193,8 @@ let g:neomake_open_list = 2
 
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "jellybeans"
+" let g:airline_theme = "jellybeans"
+let g:airline_theme = 'one'
 
 " Jedi-vim configuration
 let g:jedi#show_call_signatures = 1 
@@ -210,12 +218,15 @@ set smartcase
 " Turns search highlighting on
 set hlsearch
 " Expands TABs into whitespaces
+set tabstop=2
 set expandtab
-set shiftwidth=4  
+set shiftwidth=2  
 " Exclude these files from *
 set wildignore=*.swp,*.bak,*.pyc,*.class
 " Turn on TrueColor
 set termguicolors
+
+set foldlevel=5
 
 if executable('ag')
   " Use ag over grep
@@ -227,7 +238,11 @@ if executable('ag')
 endif
 
 " This colorscheme mimics a default Atom colorscheme which I quite like
-colorscheme onedark
+colorscheme one
+set background=dark
+
+" fzf settings
+set rtp+=/usr/local/opt/fzf
 
 " Ctrl+P opens a fuzzy filesearch window (powered by Fzf)
 nnoremap <C-p> :Files<CR>
