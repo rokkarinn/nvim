@@ -237,6 +237,8 @@ if executable('ag')
 
 endif
 
+set clipboard=unnamed
+
 " This colorscheme mimics a default Atom colorscheme which I quite like
 colorscheme one
 set background=dark
