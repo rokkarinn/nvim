@@ -35,6 +35,11 @@ if !exists('g:vscode')
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 endif
 
+if !exists('g:vscode')
+  Plug 'Yggdroot/indentLine'
+  let g:indentLine_char = '⦙'
+endif
+
 " This is a core plugin to support autocompletion for most of the things.
 " This is also the messiest one, as it requires manual (and periodic) 
 " invocation of the build script.
@@ -226,7 +231,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 " Turn on TrueColor
 set termguicolors
 
-set foldlevel=5
+set foldlevelstart=20
 
 if executable('ag')
   " Use ag over grep
@@ -270,5 +275,13 @@ nnoremap <Leader>e :Ex<CR>
 " I said write it!
 cmap w!! w !sudo tee % >/dev/null
 
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
+
 " Don't expland tabs for Go
 autocmd BufRead,BufNewFile   *.go setlocal noexpandtab
+
+" YAML documents require to have a 2 space indentation.
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
